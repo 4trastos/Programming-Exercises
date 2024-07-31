@@ -1,35 +1,34 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   fizzbuzz.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: davgalle <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/30 11:19:23 by davgalle          #+#    #+#             */
-/*   Updated: 2024/07/30 11:34:46 by davgalle         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
 
-int	main()
+void	ft_write(int numb)
 {
-	int	i;
+	char *str;
 
-	i = 1;
-	while (i <= 100)
+	str = "0123456789";
+	if (numb > 9)
+		ft_write(numb / 10);
+	write(1, &str[numb % 10], 1);
+}
+
+int	main(void)
+{
+	int	numb;
+
+	numb = 1;
+	while (numb <= 100)
 	{
-		if (i % 3 == 0 && i % 5  == 0)
-			printf("fizzbuzz");
-		else if (i % 3 == 0)
-			printf("fizz");
-		else if (i % 5 == 0)
-			printf("buzz");
+		if (numb % 3 == 0 && numb % 5 == 0)
+			write(1, "fizzbuzz", 8);
+		else if (numb % 3 == 0)
+			write(1, "fizz", 4);
+		else if (numb % 5 == 0)
+			write(1, "buzz", 4);
 		else
-			printf("%d", i);
-		printf("\n");
-		i++;
+			ft_write(numb);
+		write(1, "\n", 1);
+		numb++;
 	}
+	return (0);
 }
