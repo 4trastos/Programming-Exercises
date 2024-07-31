@@ -1,6 +1,5 @@
-##FIZZ BUZZ
+## FIZZ BUZZ
 
-```
 # English
 /*
 * Write a program that displays on the console (with a printout) the
@@ -20,4 +19,3 @@
  * - Múltiplos de 5 por la palabra "buzz".
  * - Múltiplos de 3 y de 5 a la vez por la palabra "fizzbuzz".
  */
-```
